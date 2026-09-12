@@ -1,0 +1,55 @@
+/* ============ 全局基础样式 ============ */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: 14px;
+  color: #303133;
+  background: #f5f7fa;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 刘海屏 / 全面屏底部安全区，移动端 TabBar 会用到 */
+:root {
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --pc-header-height: 56px;
+  --pc-aside-width: 220px;
+}
+
+/* 移动端禁止横向滚动 —— 表格类内容必须自己包一层可横滑的容器 */
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* 通用卡片容器 */
+.page-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.page-title {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 空状态微调 */
+.empty-tip {
+  padding: 48px 0;
+  text-align: center;
+  color: #909399;
+}

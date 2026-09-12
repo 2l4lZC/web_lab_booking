@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x9ad8;&#x6821;&#x667a;&#x80fd;&#x5b9e;&#x9a8c;&#x5ba4;&#x9884;&#x7ea6;&#x7ba1;&#x7406;&#x7cfb;&#x7edf;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<h1 id="高校智能实验室预约管理系统">高校智能实验室预约管理系统</h1>
+<p>三角色（学生 / 指导教师 / 管理员）实验室预约平台，解决 Excel 登记带来的
+「不知道开放时间、时段冲突、高级设备被随意使用、审批不及时、统计困难」问题。</p>
+<p>一套代码同时适配 <strong>手机端</strong> 和 <strong>PC 端</strong>。</p>
+<hr>
+<h2 id="技术栈">技术栈</h2>
+<table>
+<thead>
+<tr>
+<th>层</th>
+<th>选型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前端</td>
+<td>Vue 3 + Vite + Pinia + Vue Router</td>
+<td>路由懒加载</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>Element Plus（PC）+ Vant（移动）</td>
+<td>按屏宽挂载不同布局</td>
+</tr>
+<tr>
+<td>后端</td>
+<td>Node.js + Express</td>
+<td>ESM 模块</td>
+</tr>
+<tr>
+<td>数据库</td>
+<td>MySQL 8</td>
+<td>mysql2 连接池 + 手写 SQL</td>
+</tr>
+<tr>
+<td>鉴权</td>
+<td>JWT</td>
+<td>三角色 RBAC</td>
+</tr>
+</tbody>
+</table>
+<p><strong>为什么数据访问层用手写 SQL 而不是 ORM</strong>：本系统的核心是「时段区间重叠 +
+人数累加」查询，本质是区间运算，ORM 在这里反而成为障碍，且难以调优。</p>
+<hr>
+<h2 id="目录结构">目录结构</h2>
+<pre><code>lab-booking/
+├── sql/
+│   └── schema.sql              # 建库建表 + 实验室/设备初始数据
+├── server/
+│   ├── .env                    # 本地配置（已在 .gitignore 中）
+│   ├── .env.example            # 配置模板
+│   └── src/
+│       ├── app.js              # 入口：先探数据库再监听端口
+│       ├── config.js           # 配置集中加载
+│       ├── db.js               # 连接池 + 事务辅助
+│       ├── middleware/
+│       │   ├── auth.js         # JWT 校验
+│       │   ├── rbac.js         # 角色控制
+│       │   └── errorHandler.js # 统一错误出口
+│       ├── routes/             # 只做参数校验，不写业务逻辑
+│       ├── services/           # 业务逻辑（冲突检测将放在这里）
+│       └── scripts/
+│           └── seed-users.js   # 初始用户（密码需 bcrypt，故不入 SQL）
+└── web/
+    └── src/
+        ├── api/                # axios 封装 + 接口定义
+        ├── composables/
+        │   ├── useBreakpoint.js  # 全站唯一断点判据（768px）
+        │   └── useNotify.js      # 双端统一的轻提示
+        ├── config/menu.js      # 导航菜单单一数据源
+        ├── layouts/
+        │   ├── PcLayout.vue      # 侧边栏 + 顶栏
+        │   └── MobileLayout.vue  # 顶部栏 + 底部 TabBar
+        ├── router/
+        ├── stores/
+        └── views/
+            ├── student/        # 移动优先
+            ├── teacher/        # 双端并重
+            └── admin/          # PC 优先
+</code></pre>
+<hr>
+<h2 id="环境要求">环境要求</h2>
+<ul>
+<li>Node.js 18+（开发环境验证于 v24.13.1）</li>
+<li>MySQL 8.0+</li>
+</ul>
+<hr>
+<h2 id="启动步骤">启动步骤</h2>
+<h3 id="1-建库导数据">1. 建库导数据</h3>
+<pre><code class="language-bash">mysql -u root -p &lt; sql/schema.sql
+</code></pre>
+<blockquote>
+<p>⚠️ 该脚本开头会 <code>DROP DATABASE lab_booking</code>，用于从零重建。
+库里已有真实数据时<strong>不要重复执行</strong>。</p>
+</blockquote>
+<h3 id="2-写入初始用户">2. 写入初始用户</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> server
+<span class="hljs-built_in">cp</span> .env.example .<span class="hljs-built_in">env</span>    <span class="hljs-comment"># 按实际情况修改数据库连接</span>
+npm install
+npm run seed
+</code></pre>
+<h3 id="3-启动后端">3. 启动后端</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> server
+npm run dev             <span class="hljs-comment"># 开发模式，改动自动重启</span>
+</code></pre>
+<p>可选的辅助脚本：</p>
+<pre><code class="language-bash">npm run seed:demo       <span class="hljs-comment"># 生成过去 30 天的演示预约数据（统计页需要，否则全是 0）</span>
+npm run <span class="hljs-built_in">test</span>:smoke      <span class="hljs-comment"># 管理端接口冒烟测试，25 项校验</span>
+</code></pre>
+<p>启动成功会看到：</p>
+<pre><code>[DB]   已连接 127.0.0.1:3306/lab_booking
+[HTTP] 服务已启动  http://localhost:3000
+</code></pre>
+<h3 id="4-启动前端">4. 启动前端</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> web
+npm install
+npm run dev
+</code></pre>
+<ul>
+<li>PC 访问：<code>http://localhost:5173</code></li>
+<li>手机访问：<code>http://&lt;本机局域网IP&gt;:5173</code>（需与电脑同一 WiFi）</li>
+</ul>
+<p><code>vite.config.js</code> 中已设置 <code>server.host = true</code>，否则 Vite 只监听 localhost，手机访问不到。</p>
+<hr>
+<h2 id="演示账号">演示账号</h2>
+<p>密码统一为 <code>123456</code>。</p>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>账号</th>
+<th>姓名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>管理员</td>
+<td><code>admin</code></td>
+<td>系统管理员</td>
+<td>可管理实验室、设备、统计</td>
+</tr>
+<tr>
+<td>指导教师</td>
+<td><code>T1001</code></td>
+<td>王建国</td>
+<td>指导张三、李四</td>
+</tr>
+<tr>
+<td>指导教师</td>
+<td><code>T1002</code></td>
+<td>李慧敏</td>
+<td>指导王五、赵六</td>
+</tr>
+<tr>
+<td>学生（本科）</td>
+<td><code>S2021001</code></td>
+<td>张三</td>
+<td>导师 T1001</td>
+</tr>
+<tr>
+<td>学生（本科）</td>
+<td><code>S2021002</code></td>
+<td>李四</td>
+<td>导师 T1001</td>
+</tr>
+<tr>
+<td>学生（研究生）</td>
+<td><code>S2022001</code></td>
+<td>王五</td>
+<td>导师 T1002</td>
+</tr>
+<tr>
+<td>学生（研究生）</td>
+<td><code>S2022002</code></td>
+<td>赵六</td>
+<td>导师 T1002</td>
+</tr>
+</tbody>
+</table>
+<p>研究生 / 本科生之分会影响设备使用权限（如 GPU 服务器仅限研究生）。</p>
+<hr>
+<h2 id="三个实验室的规则差异">三个实验室的规则差异</h2>
+<table>
+<thead>
+<tr>
+<th>实验室</th>
+<th>类型</th>
+<th>开放时间</th>
+<th>容量</th>
+<th>可提前</th>
+<th>审批级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算机实验室A</td>
+<td>普通</td>
+<td>8:00-22:00</td>
+<td>20 人</td>
+<td>3 天</td>
+<td>无需审批</td>
+</tr>
+<tr>
+<td>人工智能实验室</td>
+<td>高级</td>
+<td>9:00-21:00</td>
+<td>15 人</td>
+<td>3 天</td>
+<td>教师审核</td>
+</tr>
+<tr>
+<td>机器人实验室</td>
+<td>设备型</td>
+<td>10:00-18:00</td>
+<td>10 人</td>
+<td>5 天</td>
+<td>教师 + 管理员</td>
+</tr>
+</tbody>
+</table>
+<p>这些规则全部存在 <code>labs</code> 表的字段里，改规则不需要改代码。</p>
+<hr>
+<h2 id="核心设计说明">核心设计说明</h2>
+<h3 id="冲突检测的原子性">冲突检测的原子性</h3>
+<p>预约提交时用<strong>实验室行作为互斥锁</strong>，把同一实验室的并发请求串行化：</p>
+<pre><code class="language-sql"><span class="hljs-keyword">START</span> TRANSACTION;
+<span class="hljs-keyword">SELECT</span> id, capacity <span class="hljs-keyword">FROM</span> labs <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> ? <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">UPDATE</span>;   <span class="hljs-comment">-- ① 加锁排队</span>
+<span class="hljs-keyword">SELECT</span> IFNULL(<span class="hljs-built_in">SUM</span>(people_count), <span class="hljs-number">0</span>) <span class="hljs-keyword">FROM</span> reservations     <span class="hljs-comment">-- ② 区间重叠累加</span>
+ <span class="hljs-keyword">WHERE</span> lab_id <span class="hljs-operator">=</span> ? <span class="hljs-keyword">AND</span> reserve_date <span class="hljs-operator">=</span> ?
+   <span class="hljs-keyword">AND</span> status <span class="hljs-keyword">IN</span> (<span class="hljs-string">&#x27;pending&#x27;</span>,<span class="hljs-string">&#x27;approved&#x27;</span>)
+   <span class="hljs-keyword">AND</span> start_time <span class="hljs-operator">&lt;</span> ? <span class="hljs-keyword">AND</span> end_time <span class="hljs-operator">&gt;</span> ?;
+<span class="hljs-comment">-- ③ 应用层判断 已用 + 本次 &lt;= capacity，再 INSERT</span>
+<span class="hljs-keyword">COMMIT</span>;
+</code></pre>
+<p>两个关键点：</p>
+<ol>
+<li><strong>重叠判据是开区间 <code>start &lt; newEnd AND end &gt; newStart</code></strong>，
+不是 <code>BETWEEN</code>。写成 <code>&lt;=</code> / <code>&gt;=</code> 会导致
+「10:00-12:00」和「12:00-14:00」被误判为冲突。</li>
+<li><strong>锁的是实验室行，不是预约记录</strong>。只锁查出来的预约行时，
+查询结果为空（第一个预约）等于没锁，并发下会同时插入。</li>
+</ol>
+<h3 id="违规降权">违规降权</h3>
+<p>违规记录只记事实，<strong>权限由记录数实时推导</strong>，不写死在用户表：</p>
+<table>
+<thead>
+<tr>
+<th>近 90 天违规次数</th>
+<th>可提前预约天数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 ~ 2 次</td>
+<td>按实验室配置正常</td>
+</tr>
+<tr>
+<td>3 ~ 4 次</td>
+<td>降为 1 天</td>
+</tr>
+<tr>
+<td>≥ 5 次</td>
+<td>冻结预约 7 天</td>
+</tr>
+</tbody>
+</table>
+<p>这样违规记录被撤销（申诉成功）后，权限能自动恢复。</p>
+<hr>
+<h2 id="开发进度">开发进度</h2>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> <strong>P1</strong> 项目骨架 / 建表脚本 / 后端框架 / JWT 登录 / 双端布局</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> <strong>P2</strong> 实验室查询 / 可约时段 / 预约接口 / 冲突检测 + 并发压测 / 学生端页面</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> <strong>P3</strong> 两级审批 / 签到码与二维码 / 未签到定时扫描 / 审批页与签到页</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> <strong>P4</strong> 管理端实验室、设备与用户管理</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> <strong>P5</strong> 统计图表 + 部署配置（Nginx / pm2 / HTTPS 文档见 <code>deploy/DEPLOY.md</code>）</li>
+</ul>
+<h3 id="已验证的关键结论">已验证的关键结论</h3>
+<p><strong>P2 冲突检测</strong></p>
+<ul>
+<li><strong>10 项规则测试全部符合预期</strong>，含「12:00 首尾相接不算冲突」这个边界</li>
+<li><strong>20 并发抢 10 人实验室：成功 10 个、失败 10 个，数据库占用 10 人，未超卖</strong></li>
+<li>取消预约后容量正确释放</li>
+</ul>
+<p><strong>P3 审批与签到</strong></p>
+<ul>
+<li>两级审批串联正确：教师通过后预约才流转到管理员，任一级驳回即终止</li>
+<li>管理员看不到教师尚未审核的预约（<code>admin_status</code> 初始为 <code>NULL</code> 而非 <code>pending</code>）</li>
+<li>签到校验完整：重复签到、他人签到码、越权查看、时间窗口、格式校验均正确拦截</li>
+<li>中文经 UTF-8 读写正常（已用 Node fetch 验证，与浏览器行为一致）</li>
+</ul>
+<hr>
+<h2 id="部署p5待实施">部署（P5，待实施）</h2>
+<ol>
+<li>Nginx 托管前端 <code>dist</code>，<code>/api</code> 反代到 <code>127.0.0.1:3000</code></li>
+<li>前端使用 history 路由，Nginx 需配 <code>try_files $uri $uri/ /index.html</code></li>
+<li>pm2 守护 Node 进程</li>
+<li>certbot 签发 Let's Encrypt 证书</li>
+</ol>
+<p><strong>扫码签到必须走 HTTPS</strong>：浏览器只在 HTTPS 或 localhost 下才允许
+调用摄像头（<code>getUserMedia</code>）。用 <code>http://192.168.x.x</code> 访问时扫码功能会被浏览器拒绝。</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
